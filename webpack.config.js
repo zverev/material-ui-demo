@@ -13,7 +13,7 @@ module.exports = {
 
     module: {
         loaders: [
-            { test: /\.js$/, loader: 'babel', query: { presets: ['es2015'] }, exclude: /(external\/SearchJS)/ },
+            { test: /\.js$/, loader: 'babel', query: { presets: ['es2015', 'react'] }, exclude: /node_modules/ },
             { test: /\.css$/, loader: extractCSS.extract(['css']) },
             { test: /\.styl$/, loader: extractCSS.extract(['css', 'stylus']) },
             { test: /\.html$/, loader: 'raw' },
