@@ -21,6 +21,10 @@ module.exports = {
         ]
     },
 
+    sassLoader: {
+        data: '@import "' + path.resolve(__dirname, 'src/theme.sass') + '";'
+    },
+
     plugins: [
         extractCSS
     ],
