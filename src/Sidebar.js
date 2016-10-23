@@ -2,6 +2,7 @@ import { Checkbox, Button, Sidebar, AppBar } from 'react-toolbox'
 import DatePicker from 'react-toolbox/lib/date_picker'
 import React, { Component } from 'react'
 import { CloseIcon } from './icons.js'
+import moment from 'moment'
 
 const datepickerLocaleRu = {
   months: 'январь_февраль_март_апрель_май_июнь_июль_август_сентябрь_октябрь_ноябрь_декабрь'.split('_'),
@@ -13,6 +14,7 @@ const datepickerLocaleRu = {
 
 class SidebarContents extends Component {
   componentWillMount() {
+    moment.locale('ru')
     this.setState({
       date: new Date()
     })
@@ -21,11 +23,10 @@ class SidebarContents extends Component {
   render() {
     return (
       <DatePicker
-        label='Birthdate'
         locale={datepickerLocaleRu}
         onChange={(date) => this.setState({ date })}
         value={this.state.date}
-        inputFormat={(value) => `${value.getDate()}.${value.getMonth() + 1}.${value.getFullYear()}`}
+        inputFormat={(value) => moment().format('MMMM YYYY')}
       />
     )
   }
