@@ -3,6 +3,8 @@ import { AppBar, Checkbox, IconButton, Button } from 'react-toolbox';
 import { Layout, NavDrawer, Panel, Sidebar } from 'react-toolbox';
 
 import Map from './Map.js'
+// const styles = {}
+import styles from './styles.sass'
 
 export default class LayoutTest extends React.Component {
     componentWillMount() {
@@ -36,11 +38,10 @@ export default class LayoutTest extends React.Component {
                     </p>
                 </NavDrawer>
                 <Panel>
-                    <AppBar>
-                        <Button label='D' flat onClick={() => this.toggleDrawerActive()}/>
-                        <Button label='S' flat onClick={() => this.toggleSidebar()}/>
-                    </AppBar>
-                    <div style={{ flex: 1, overflowY: 'auto' }}>
+                    <div className={styles.controlPane}>
+                      <Button label='sidebar' onClick={() => this.toggleSidebar()}/>
+                    </div>
+                    <div className={styles.mapPane}>
                         <Map />
                     </div>
                 </Panel>
