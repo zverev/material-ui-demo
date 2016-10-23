@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { AppBar, Checkbox, IconButton, Button } from 'react-toolbox';
 import { Layout, NavDrawer, Panel, Sidebar } from 'react-toolbox';
+import MenuIcon from './icons/Menu.js'
+import If from './If.js'
 
 import Map from './Map.js'
-// const styles = {}
 import styles from './styles.sass'
 
 export default class LayoutTest extends React.Component {
@@ -39,7 +40,11 @@ export default class LayoutTest extends React.Component {
                 </NavDrawer>
                 <Panel>
                     <div className={styles.controlPane}>
-                      <Button label='sidebar' onClick={() => this.toggleSidebar()}/>
+                      <If condition={!this.state.sidebarPinned}>
+                        <Button raised onClick={() => this.toggleSidebar()}>
+                          <MenuIcon />
+                        </Button>
+                      </If>
                     </div>
                     <div className={styles.mapPane}>
                         <Map />
