@@ -1,6 +1,22 @@
 import { Checkbox, Button, Sidebar, AppBar } from 'react-toolbox'
+import DatePicker from 'react-toolbox/lib/date_picker'
 import React, { Component } from 'react'
 import { CloseIcon } from './icons.js'
+
+class SidebarContents extends Component {
+  componentWillMount() {
+    this.setState({
+      date: new Date()
+    })
+  }
+
+  render() {
+    return (
+      <DatePicker label='Birthdate' sundayFirstDayOfWeek onChange={(date) => this.setState({ date })} value={this.state.date} />
+    )
+  }
+}
+
 
 export default class extends Component {
   render() {
@@ -19,8 +35,4 @@ export default class extends Component {
       </Sidebar>
     )
   }
-}
-
-function SidebarContents() {
-  return <div/>
 }
