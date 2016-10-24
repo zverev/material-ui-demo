@@ -1,7 +1,7 @@
-import { Checkbox, Button, Sidebar, AppBar } from 'react-toolbox'
+import { Checkbox, Button, Sidebar, AppBar, Tabs, Tab } from 'react-toolbox'
 import DatePicker from 'react-toolbox/lib/date_picker'
 import React, { Component } from 'react'
-import { CloseIcon } from './icons.js'
+import { CloseIcon, CalculateIcon, DownloadIcon, LayersIcon, PrintIcon, VolumeIcon, ScanIcon } from './icons.js'
 import moment from 'moment'
 
 const datepickerLocaleRu = {
@@ -16,18 +16,33 @@ class SidebarContents extends Component {
   componentWillMount() {
     moment.locale('ru')
     this.setState({
-      date: new Date()
+      date: new Date(),
+      tabIndex: 0
     })
+  }
+
+  onTabChange(tabIndex) {
+    this.setState({ tabIndex })
   }
 
   render() {
     return (
-      <DatePicker
-        locale={datepickerLocaleRu}
-        onChange={(date) => this.setState({ date })}
-        value={this.state.date}
-        inputFormat={(value) => moment().format('MMMM YYYY')}
-      />
+      <div>
+        <DatePicker
+          locale={datepickerLocaleRu}
+          onChange={(date) => this.setState({ date })}
+          value={this.state.date}
+          inputFormat={(value) => moment().format('MMMM YYYY')}
+        />
+        <Tabs index={this.state.tabIndex} fixed onChange={(tabIndex) => this.onTabChange(tabIndex)}>
+          <Tab label={<PrintIcon/>}><small>Primary content</small></Tab>
+          <Tab label={<ScanIcon/>}><small>Secondary content</small></Tab>
+          <Tab label={<CalculateIcon/>}><small>Disabled content</small></Tab>
+          <Tab label={<DownloadIcon/>}><small>Fourth content hidden</small></Tab>
+          <Tab label={<LayersIcon/>}><small>Fifth content</small></Tab>
+          <Tab label={<VolumeIcon/>}><small>Fifth content</small></Tab>
+        </Tabs>
+      </div>
     )
   }
 }
