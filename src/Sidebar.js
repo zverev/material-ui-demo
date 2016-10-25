@@ -3,6 +3,7 @@ import DatePicker from 'react-toolbox/lib/date_picker'
 import React, { Component } from 'react'
 import { CloseIcon, CalculateIcon, DownloadIcon, LayersIcon, PrintIcon, VolumeIcon } from './icons.js'
 import moment from 'moment'
+import CheckboxesDemo from './CheckboxesDemo'
 
 const datepickerLocaleRu = {
   months: 'январь_февраль_март_апрель_май_июнь_июль_август_сентябрь_октябрь_ноябрь_декабрь'.split('_'),
@@ -36,7 +37,7 @@ class SidebarContents extends Component {
         />
         <Tabs index={this.state.tabIndex} fixed onChange={(tabIndex) => this.onTabChange(tabIndex)}>
           <Tab label={<PrintIcon/>}><small>Primary content</small></Tab>
-          <Tab label={<CloseIcon/>}><small>Secondary content</small></Tab>
+          <Tab label={<CloseIcon/>}>{<CheckboxesDemo />}</Tab>
           <Tab label={<CalculateIcon/>}><small>Disabled content</small></Tab>
           <Tab label={<DownloadIcon/>}><small>Fourth content hidden</small></Tab>
           <Tab label={<LayersIcon/>}><small>Fifth content</small></Tab>
