@@ -47,7 +47,7 @@ export const CalculateIcon = ({ fill='#000' }) => {
             <g id="Tabs-/-Markers" transform="translate(182.000000, 0.000000)">
               <g id="ic/pin-A" transform="translate(16.000000, 8.000000)">
                 <polygon id="ic/pin" points="0 0 24 0 24 24 0 24"></polygon>
-                <g id="ic/pin" fill-rule="evenodd">
+                <g id="ic/pin" fillRule="evenodd">
                   <CalculateIconPart fill={fill} />
                 </g>
               </g>
@@ -88,7 +88,7 @@ export const DownloadIcon = ({ fill='#000' }) => (
 
 export const LayersIcon = ({ fill='#000' }) => (
   <svg width="24px" height="24px" viewBox="0 0 24 24">
-      <g id="Symbols" stroke="none" stroke-width="1" fill="none" fillRule="evenodd">
+      <g id="Symbols" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g id="ic/layers">
               <g id="ic_layers_black_24px">
                   <g id="Group">
@@ -103,7 +103,7 @@ export const LayersIcon = ({ fill='#000' }) => (
 
 export const PrintIcon = ({ fill='#000' }) => (
   <svg width="20px" height="18px" viewBox="0 0 20 18">
-      <g id="Sidebar-M" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.6">
+      <g id="Sidebar-M" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g id="O2---Mobile-Sidebar-Test" transform="translate(-261.000000, -127.000000)">
               <g id="TabBar" transform="translate(0.000000, 116.000000)">
                   <g id="Tabs" transform="translate(243.000000, 0.000000)">
@@ -132,7 +132,7 @@ export const VolumeIcon = ({ fill='#000' }) => (
               <circle id="path-1" cx="12" cy="12" r="9"></circle>
           </mask>
       </defs>
-      <g id="Sidebar-M" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.6">
+      <g id="Sidebar-M" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g id="O2---Mobile-Sidebar-Test" transform="translate(-80.000000, -127.000000)">
               <g id="TabBar" transform="translate(0.000000, 116.000000)">
                   <g id="Tabs-/-Volumes-A" transform="translate(61.000000, 0.000000)">
@@ -140,6 +140,29 @@ export const VolumeIcon = ({ fill='#000' }) => (
                           <g>
                                   <circle id="path-1" cx="12" cy="12" r="9" fill={fill}></circle>
                               {/* <path d="M12,11 L15.699722,14.1711903 L19,17 C19,17 14.3183218,19.8823662 12,19.8823662 C9.65165516,19.8823662 5,17 5,17 L12,11 Z" fill="#000000" mask="url(#mask-3)"></path> */}
+                          </g>
+                      </g>
+                  </g>
+              </g>
+          </g>
+      </g>
+  </svg>
+)
+
+export const ScanIcon = ({ fill='#000' }) => (
+  <svg width="18px" height="20px">
+      <g id="Sidebar-M" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+          <g id="O2---Mobile-Sidebar-Test" transform="translate(-19.000000, -126.000000)">
+              <g id="TabBar" transform="translate(0.000000, 116.000000)">
+                  <g id="Tabs-/-Scans">
+                      <g id="Tabs">
+                          <g id="ic/scan" transform="translate(16.000000, 8.000000)">
+                              <g id="ic_date_range_black_24px">
+                                  <g id="Group">
+                                      <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                                      <path d="M9,11 L7,11 L7,13 L9,13 L9,11 L9,11 Z M13,11 L11,11 L11,13 L13,13 L13,11 L13,11 Z M17,11 L15,11 L15,13 L17,13 L17,11 L17,11 Z M19,4 L18,4 L18,2 L16,2 L16,4 L8,4 L8,2 L6,2 L6,4 L5,4 C3.89,4 3.01,4.9 3.01,6 L3,20 C3,21.1 3.89,22 5,22 L19,22 C20.1,22 21,21.1 21,20 L21,6 C21,4.9 20.1,4 19,4 L19,4 Z M19,20 L5,20 L5,9 L19,9 L19,20 L19,20 Z" id="Shape" fill={fill}></path>
+                                  </g>
+                              </g>
                           </g>
                       </g>
                   </g>

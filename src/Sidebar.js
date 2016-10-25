@@ -1,9 +1,12 @@
-import { Checkbox, Button, Sidebar, AppBar, Tabs, Tab } from 'react-toolbox'
+import { Checkbox, Button, Sidebar, AppBar, Tabs, Tab, Panel, RadioGroup, RadioButton } from 'react-toolbox'
 import DatePicker from 'react-toolbox/lib/date_picker'
 import React, { Component } from 'react'
-import { CloseIcon, CalculateIcon, DownloadIcon, LayersIcon, PrintIcon, VolumeIcon } from './icons.js'
+import { CloseIcon, CalculateIcon, DownloadIcon, LayersIcon, PrintIcon, VolumeIcon, ScanIcon } from './icons.js'
 import moment from 'moment'
 import CheckboxesDemo from './CheckboxesDemo/index.js'
+import RadioText from './RadioText'
+
+import styles from './styles.sass'
 
 const datepickerLocaleRu = {
   months: 'январь_февраль_март_апрель_май_июнь_июль_август_сентябрь_октябрь_ноябрь_декабрь'.split('_'),
@@ -11,6 +14,31 @@ const datepickerLocaleRu = {
   weekdays: 'понедельник_вторник_среда_четверг_пятница_субботв_воскресенье'.split('_'),
   weekdaysShort: 'пн._вт._ср._чт._пт._сб._вс'.split('_'),
   weekdaysLetter: 'пн_вт_ср_чт_пт_сб_вс'.split('_')
+}
+
+class TabContents extends Component {
+  componentWillMount() {
+    this.setState({
+      radioValue: 'bar'
+    })
+  }
+
+  handleRadioChange(radioValue) {
+    this.setState({ radioValue })
+  }
+
+  render() {
+    return (
+      <Panel>
+        <RadioGroup name='comic' value={this.state.radioValue} onChange={(v) => this.handleRadioChange(v)}>
+          <RadioButton label={<RadioText textLeft="Последних" textRight="27 Янв — 18 Янв" />} value='foo'/>
+          <RadioButton label='From Hell' value='bar' disabled/>
+          <RadioButton label='V for a Vendetta' value='baz'/>
+          <RadioButton label='Watchmen' value='qux'/>
+        </RadioGroup>
+      </Panel>
+    )
+  }
 }
 
 class SidebarContents extends Component {
@@ -28,7 +56,7 @@ class SidebarContents extends Component {
 
   render() {
     return (
-      <div>
+      <div className={styles.sidebarContents}>
         <DatePicker
           locale={datepickerLocaleRu}
           onChange={(date) => this.setState({ date })}
@@ -36,8 +64,8 @@ class SidebarContents extends Component {
           inputFormat={(value) => moment().format('MMMM YYYY')}
         />
         <Tabs index={this.state.tabIndex} fixed onChange={(tabIndex) => this.onTabChange(tabIndex)}>
-          <Tab label={<PrintIcon/>}><small>Primary content</small></Tab>
-          <Tab label={<CloseIcon/>}>{<CheckboxesDemo />}</Tab>
+          <Tab label={<CloseIcon/>}>{<div><TabContents /><CheckboxesDemo /></div>}</Tab>
+          <Tab label={<ScanIcon/>}><small>Secondary content</small></Tab>
           <Tab label={<CalculateIcon/>}><small>Disabled content</small></Tab>
           <Tab label={<DownloadIcon/>}><small>Fourth content hidden</small></Tab>
           <Tab label={<LayersIcon/>}><small>Fifth content</small></Tab>
