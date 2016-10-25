@@ -7,78 +7,37 @@ import styles from './styles.sass'
 export default class CheckboxesDemo extends Component {
     componentWillMount() {
         this.setState({
-            'check1': false,
-            'check2': true
+            id: '1',
+            label: 'Проделанные работы',
+            expanded: true,
+            children: [
+                {
+                    id: '11',
+                    label: 'Накопительно',
+                    expanded: false,
+                    children: [
+                        { id: '111', visible: true, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) },
+                        { id: '112', visible: true, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) },
+                        { id: '113', visible: true, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) }
+                    ]
+                },
+                {
+                    id: '12',
+                    label: 'Сравнительно',
+                    expanded: true,
+                    children: [
+                        { id: '121', visible: true, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) },
+                        { id: '122', visible: true, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) },
+                        { id: '123', visible: true, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) }
+                    ]
+                }
+            ]
         })
     }
 
     render() {
         return (
-            <div>
-            <CheckboxGroup label={'Проделанные работы'}>
-                <div className={styles.checkboxItem}>
-                    <CheckboxItem
-                        checked={this.state.check1}
-                        label={'Участок 1'}
-                        modified={new Date(2015, 11, 5)}
-                        author={'Burtseva Nelly'}
-                        onChange={(value) => { this.setState({ check1: value }) }}
-                    />
-                    </div>
-                <div className={styles.checkboxItem}>
-                    <CheckboxItem
-                        className={styles.checkboxItem}
-                        checked={this.state.check2}
-                        label={'2 участок Объем земляных работ - 04.08 - 29.10'}
-                        modified={new Date(2016, 10, 5)}
-                        author={'Голубев Максим'}
-                        onChange={(value) => { this.setState({ check2: value }) }}
-                    />
-                </div>
-            </CheckboxGroup>
-            <CheckboxGroup label={'Проделанные работы'}>
-                <div className={styles.checkboxItem}>
-                    <CheckboxItem
-                        checked={this.state.check1}
-                        label={'Участок 1'}
-                        modified={new Date(2015, 11, 5)}
-                        author={'Burtseva Nelly'}
-                        onChange={(value) => { this.setState({ check1: value }) }}
-                    />
-                    </div>
-                <div className={styles.checkboxItem}>
-                    <CheckboxItem
-                        className={styles.checkboxItem}
-                        checked={this.state.check2}
-                        label={'2 участок Объем земляных работ - 04.08 - 29.10'}
-                        modified={new Date(2016, 10, 5)}
-                        author={'Голубев Максим'}
-                        onChange={(value) => { this.setState({ check2: value }) }}
-                    />
-                </div>
-            </CheckboxGroup>
-            <CheckboxGroup label={'Проделанные работы'}>
-                <div className={styles.checkboxItem}>
-                    <CheckboxItem
-                        checked={this.state.check1}
-                        label={'Участок 1'}
-                        modified={new Date(2015, 11, 5)}
-                        author={'Burtseva Nelly'}
-                        onChange={(value) => { this.setState({ check1: value }) }}
-                    />
-                    </div>
-                <div className={styles.checkboxItem}>
-                    <CheckboxItem
-                        className={styles.checkboxItem}
-                        checked={this.state.check2}
-                        label={'2 участок Объем земляных работ - 04.08 - 29.10'}
-                        modified={new Date(2016, 10, 5)}
-                        author={'Голубев Максим'}
-                        onChange={(value) => { this.setState({ check2: value }) }}
-                    />
-                </div>
-            </CheckboxGroup>
-            </div>
+            <CheckboxGroup group={this.state} />
         )
     }
 }

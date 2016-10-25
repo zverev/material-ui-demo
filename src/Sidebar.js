@@ -3,7 +3,7 @@ import DatePicker from 'react-toolbox/lib/date_picker'
 import React, { Component } from 'react'
 import { CloseIcon, CalculateIcon, DownloadIcon, LayersIcon, PrintIcon, VolumeIcon } from './icons.js'
 import moment from 'moment'
-import CheckboxesDemo from './CheckboxesDemo'
+import CheckboxesDemo from './CheckboxesDemo/index.js'
 
 const datepickerLocaleRu = {
   months: 'январь_февраль_март_апрель_май_июнь_июль_август_сентябрь_октябрь_ноябрь_декабрь'.split('_'),
