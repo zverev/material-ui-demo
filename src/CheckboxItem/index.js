@@ -6,15 +6,15 @@ import If from '../If.js'
 
 export default class CheckboxItem extends Component {
     render() {
-        const { label, modified, author, onChange, chidren } = this.props
+        const { checked, label, modified, author, onChange, chidren } = this.props
 
         return (
             <div className={styles.checkboxItem}>
                 <div className={styles.checkboxArea}>
-                    <Checkbox />
+                    <Checkbox checked={checked} onChange={(value) => onChange(!checked)}/>
                 </div>
                 <div className={styles.contentArea}>
-                    <span className={styles.label}>{label}</span>
+                    <span className={styles.label} onClick={(value) => onChange(!checked)}>{label}</span>
                     <div className={styles.footer}>
                         <If condition={author}>
                             <span className={styles.author}>{author}</span>
