@@ -27,11 +27,11 @@ export default class SidebarContents extends Component {
     return (
       <div className={styles.sidebar}>
         <div className={styles.header}>
-          <AppBar flat>
+          <div className={styles.headerBar}>
             <Button onClick={onCloseButtonClick}>
               <CloseIcon />
             </Button>
-          </AppBar>
+          </div>
           <DatePickerDemo />
           <TabsDemo index={this.state.tabIndex} onChange={(tabIndex) => this.onTabChange(tabIndex)} />
         </div>
