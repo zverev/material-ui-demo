@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { Button, AppBar, Tabs, Tab } from 'react-toolbox'
-import { CloseIcon, CalculateIcon, DownloadIcon, LayersIcon, PrintIcon, VolumeIcon, ScanIcon } from '../icons.js'
+import { CloseIcon } from '../icons.js'
+import TabsDemo from '../TabsDemo'
 import DatePickerDemo from '../DatePickerDemo'
 import CheckboxesDemo from '../CheckboxesDemo'
 import RadiosDemo from '../RadiosDemo'
+import If from '../If.js'
 
 import styles from './styles.sass'
 
@@ -30,21 +32,16 @@ export default class SidebarContents extends Component {
               <CloseIcon />
             </Button>
           </AppBar>
+          <DatePickerDemo />
+          <TabsDemo index={this.state.tabIndex} onChange={(tabIndex) => this.onTabChange(tabIndex)} />
         </div>
         <div className={styles.content}>
-          <DatePickerDemo />
-          <Tabs index={this.state.tabIndex} fixed onChange={(tabIndex) => this.onTabChange(tabIndex)}>
-            <Tab label={<CloseIcon/>}>{
-              <div>
-                <RadiosDemo />
-                <CheckboxesDemo />
-              </div>}</Tab>
-            <Tab label={<ScanIcon/>}><small>Secondary content</small></Tab>
-            <Tab label={<CalculateIcon/>}><small>Disabled content</small></Tab>
-            <Tab label={<DownloadIcon/>}><small>Fourth content hidden</small></Tab>
-            <Tab label={<LayersIcon/>}><small>Fifth content</small></Tab>
-            <Tab label={<VolumeIcon/>}><small>Fifth content</small></Tab>
-          </Tabs>
+          <If condition={this.state.tabIndex === 0}>
+            <div>
+              <RadiosDemo />
+              <CheckboxesDemo />
+            </div>
+          </If>
         </div>
       </div>
     )
