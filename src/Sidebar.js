@@ -2,24 +2,17 @@ import { Checkbox, Button, Sidebar, AppBar, Tabs, Tab, Panel, RadioGroup, RadioB
 import DatePicker from 'react-toolbox/lib/date_picker'
 import React, { Component } from 'react'
 import { CloseIcon, CalculateIcon, DownloadIcon, LayersIcon, PrintIcon, VolumeIcon, ScanIcon } from './icons.js'
-import moment from 'moment'
+import DatePickerDemo from './DatePickerDemo'
 import CheckboxesDemo from './CheckboxesDemo'
 import RadiosDemo from './RadiosDemo'
 import RadioText from './RadioText'
 
 import styles from './styles.sass'
 
-const datepickerLocaleRu = {
-  months: 'январь_февраль_март_апрель_май_июнь_июль_август_сентябрь_октябрь_ноябрь_декабрь'.split('_'),
-  monthsShort: 'янв._фев._мар._апр._май._июн._июл._авг._сен._окт._ноя._дек.'.split('_'),
-  weekdays: 'понедельник_вторник_среда_четверг_пятница_субботв_воскресенье'.split('_'),
-  weekdaysShort: 'пн._вт._ср._чт._пт._сб._вс'.split('_'),
-  weekdaysLetter: 'пн_вт_ср_чт_пт_сб_вс'.split('_')
-}
+
 
 class SidebarContents extends Component {
   componentWillMount() {
-    moment.locale('ru')
     this.setState({
       date: new Date(),
       tabIndex: 0
@@ -33,12 +26,7 @@ class SidebarContents extends Component {
   render() {
     return (
       <div className={styles.sidebarContents}>
-        <DatePicker
-          locale={datepickerLocaleRu}
-          onChange={(date) => this.setState({ date })}
-          value={this.state.date}
-          inputFormat={(value) => moment().format('MMMM YYYY')}
-        />
+        <DatePickerDemo />
         <Tabs index={this.state.tabIndex} fixed onChange={(tabIndex) => this.onTabChange(tabIndex)}>
           <Tab label={<CloseIcon/>}>{
             <div>
