@@ -47,7 +47,7 @@ export const CalculateIcon = ({ fill='#000' }) => {
             <g id="Tabs-/-Markers" transform="translate(182.000000, 0.000000)">
               <g id="ic/pin-A" transform="translate(16.000000, 8.000000)">
                 <polygon id="ic/pin" points="0 0 24 0 24 24 0 24"></polygon>
-                <g id="ic/pin" fill-rule="evenodd">
+                <g id="ic/pin" fillRule="evenodd">
                   <CalculateIconPart fill={fill} />
                 </g>
               </g>
@@ -88,7 +88,7 @@ export const DownloadIcon = ({ fill='#000' }) => (
 
 export const LayersIcon = ({ fill='#000' }) => (
   <svg width="24px" height="24px" viewBox="0 0 24 24">
-      <g id="Symbols" stroke="none" stroke-width="1" fill="none" fillRule="evenodd">
+      <g id="Symbols" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g id="ic/layers">
               <g id="ic_layers_black_24px">
                   <g id="Group">
@@ -103,7 +103,7 @@ export const LayersIcon = ({ fill='#000' }) => (
 
 export const PrintIcon = ({ fill='#000' }) => (
   <svg width="20px" height="18px" viewBox="0 0 20 18">
-      <g id="Sidebar-M" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g id="Sidebar-M" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g id="O2---Mobile-Sidebar-Test" transform="translate(-261.000000, -127.000000)">
               <g id="TabBar" transform="translate(0.000000, 116.000000)">
                   <g id="Tabs" transform="translate(243.000000, 0.000000)">
@@ -132,7 +132,7 @@ export const VolumeIcon = ({ fill='#000' }) => (
               <circle id="path-1" cx="12" cy="12" r="9"></circle>
           </mask>
       </defs>
-      <g id="Sidebar-M" stroke="none" stroke-width="1" fill="none" fillRule="evenodd">
+      <g id="Sidebar-M" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g id="O2---Mobile-Sidebar-Test" transform="translate(-80.000000, -127.000000)">
               <g id="TabBar" transform="translate(0.000000, 116.000000)">
                   <g id="Tabs-/-Volumes-A" transform="translate(61.000000, 0.000000)">
