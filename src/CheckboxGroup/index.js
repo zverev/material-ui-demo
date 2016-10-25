@@ -14,10 +14,10 @@ export default class CheckboxGroup extends Component {
                         const { id, expanded, visible, label, author, modified } = node
                         if (typeof expanded !== 'undefined') {
                             // group
-                            return <div className={styles.child}><CheckboxGroup group={node} onChange={onChange} /></div>
+                            return <div key={id} className={styles.child}><CheckboxGroup group={node} onChange={onChange} /></div>
                         } else if (typeof visible !== 'undefined') {
                             // node
-                            return <div className={styles.child}><CheckboxItem label={label} author={author} modified={modified} /></div>
+                            return <div key={id} className={styles.child}><CheckboxItem label={label} author={author} modified={modified} /></div>
                         }
                         return <div/>
                     })}
