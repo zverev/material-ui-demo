@@ -54,7 +54,7 @@ export default class extends Component {
     const { onCloseButtonClick, sidebarPinned } = this.props
 
     return (
-      <Sidebar pinned={sidebarPinned} width={5}>
+      <Sidebar pinned={sidebarPinned} width={5} scrollY={true}>
           <AppBar flat>
             <Button onClick={onCloseButtonClick}>
               <CloseIcon />
