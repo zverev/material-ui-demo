@@ -32,7 +32,7 @@ export default class LayoutTest extends React.Component {
             <Map />
           </div>
         </Panel>
-        <Sidebar pinned={this.state.sidebarPinned} width={5} scrollY={true}>
+        <Sidebar className={styles.sidebar} pinned={this.state.sidebarPinned} width={5} scrollY={true}>
           <SidebarContents
             onCloseButtonClick={() => this.toggleSidebar()} sidebarPinned={this.state.sidebarPinned}
           />
