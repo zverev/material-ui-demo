@@ -1,6 +1,19 @@
 .sidebar
+  display: flex
+  flex-direction: column
+
   .header
+    overflow: hidden
+    height: 0px
+    transition: all ease .35s
+    border-bottom: 1px solid $color-primary-dark
+
+    &.headerVisible
+        height: 300px
+
     .headerBar
       background: $color-primary-dark
+
   .content
     padding: 10px
+    overflow: scroll
