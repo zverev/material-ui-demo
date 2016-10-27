@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Button, AppBar, Tabs, Tab } from 'react-toolbox'
 import { CloseIcon } from '../icons.js'
 import TabsDemo from '../TabsDemo'
+import SidebarHeaderBar from '../SidebarHeaderBar'
 import DatePickerDemo from '../DatePickerDemo'
 import CheckboxesDemo from '../CheckboxesDemo'
 import RadiosDemo from '../RadiosDemo'
@@ -54,13 +55,15 @@ export default class SidebarContents extends Component {
     return (
       <div className={styles.sidebar}>
         <div className={styles.header + ' ' + (this.state.showHeader ? styles.headerVisible : '')}>
-          <div className={styles.headerBar}>
-            <Button onClick={onCloseButtonClick}>
-              <CloseIcon />
-            </Button>
+          <div className={styles.headerChild}>
+            <SidebarHeaderBar onCloseButtonClick={onCloseButtonClick} />
           </div>
-          <DatePickerDemo />
-          <TabsDemo index={this.state.tabIndex} onChange={(tabIndex) => this.onTabChange(tabIndex)} />
+          <div className={styles.headerChild}>
+            <DatePickerDemo />
+          </div>
+          <div className={styles.headerChild}>
+            <TabsDemo index={this.state.tabIndex} onChange={(tabIndex) => this.onTabChange(tabIndex)} />
+          </div>
         </div>
         <If condition={this.state.tabIndex === 0}>
           <div className={styles.content} ref={(r) => { this.contentEl = r }}>
