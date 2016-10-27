@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { Button, AppBar, Tabs, Tab } from 'react-toolbox'
-import { CloseIcon } from '../icons.js'
+import { CloseIcon, PrintIcon, CalculateIcon } from '../icons.js'
 import TabsDemo from '../TabsDemo'
 import SidebarHeaderBar from '../SidebarHeaderBar'
 import DatePickerDemo from '../DatePickerDemo'
 import CheckboxesDemo from '../CheckboxesDemo'
 import RadiosDemo from '../RadiosDemo'
+import SwitchDemo from '../SwitchDemo'
 import If from '../If.js'
 
 import styles from './styles.sass'
@@ -67,6 +68,7 @@ export default class SidebarContents extends Component {
         </div>
         <If condition={this.state.tabIndex === 0}>
           <div className={styles.content} ref={(r) => { this.contentEl = r }}>
+            <SwitchDemo label={'foo'} icon={<PrintIcon />} />
             <RadiosDemo />
             <CheckboxesDemo />
             <RadiosDemo />
