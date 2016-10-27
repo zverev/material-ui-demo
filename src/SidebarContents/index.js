@@ -55,7 +55,7 @@ export default class SidebarContents extends Component {
     return (
       <div className={styles.sidebar}>
         <div className={styles.header + ' ' + (this.state.showHeader ? styles.headerVisible : '')}>
-          <div className={styles.headerChild}>
+          <div className={styles.headerChild + ' ' + styles.headerBar}>
             <SidebarHeaderBar onCloseButtonClick={onCloseButtonClick} />
           </div>
           <div className={styles.headerChild}>

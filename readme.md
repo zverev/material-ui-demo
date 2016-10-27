@@ -21,3 +21,7 @@
 
 - Svg в табах можно, но не задукоментировано
 - Svg как React-компонент
+
+## Dropdown
+
+- баг https://github.com/react-toolbox/react-toolbox/issues/867
