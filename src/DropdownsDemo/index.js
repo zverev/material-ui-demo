@@ -36,17 +36,17 @@ export default class DropdownsDemo extends Component {
       <div className={styles.dropdownsDemo}>
         <div className={styles.dropdown}>
           <Dropdown
-            onChange={(value) => this.handleChange0(value)}
-            source={this.state.values0}
-            value={this.state.value0}
+          theme={customTheme}
+          onChange={(value) => this.handleChange1(value)}
+          source={this.state.values1}
+          value={this.state.value1}
           />
         </div>
         <div className={styles.dropdown}>
           <Dropdown
-            theme={customTheme}
-            onChange={(value) => this.handleChange1(value)}
-            source={this.state.values1}
-            value={this.state.value1}
+            onChange={(value) => this.handleChange0(value)}
+            source={this.state.values0}
+            value={this.state.value0}
           />
         </div>
       </div>

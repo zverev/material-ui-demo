@@ -3,6 +3,7 @@ import { Button, Dropdown } from 'react-toolbox'
 import { CloseIcon } from '../icons.js'
 import DropdownsDemo from '../DropdownsDemo'
 
+import customButtonTheme from './customButtonTheme.sass'
 import styles from './styles.sass'
 
 export default class SidebarHeaderBar extends Component {
@@ -11,10 +12,10 @@ export default class SidebarHeaderBar extends Component {
 
     return (
       <div className={styles.sidebarHeaderBar}>
-        <Button onClick={onCloseButtonClick}>
+        <DropdownsDemo />
+        <Button theme={customButtonTheme} onClick={onCloseButtonClick}>
           <CloseIcon fill={'#fff'}/>
         </Button>
-        <DropdownsDemo />
       </div>
     )
   }
