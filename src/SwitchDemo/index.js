@@ -15,9 +15,10 @@ export default class SwitchDemo extends Component {
 
     return (
       <div className={styles.switchDemo}>
-        {icon}
-        <span>{label}</span>
+        <div class={styles.icon}>{icon}</div>
+        <span className={styles.label}>{label}</span>
         <Switch
+          className={styles.switch}
           checked={this.state.value}
           onChange={(v) => {this.setState({ value: v })}}/>
       </div>
