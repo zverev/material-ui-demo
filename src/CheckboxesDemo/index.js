@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import CheckboxItem from '../CheckboxItem'
 import CheckboxGroup from '../CheckboxGroup'
+import { extend } from 'lodash'
 import { Panel } from 'react-toolbox'
 import styles from './styles.sass'
 
@@ -35,9 +36,30 @@ export default class CheckboxesDemo extends Component {
         })
     }
 
+    onChildChange(v) {
+      console.log(find(this.state, v.id))
+    }
+
     render() {
         return (
-            <CheckboxGroup group={this.state} />
+            <CheckboxGroup group={this.state} onChange={(v) => this.onChildChange(v)}/>
         )
     }
+}
+
+function find(tree, id, arPath=[id]) {
+  if (tree.id == id) {
+    return tree
+  }
+
+  if (!tree.children) {
+    return null
+  }
+
+  for (let i = 0; i < tree.children.length; i++) {
+    let r = find(tree.children[i], id, [].concat(arPath, id, [].concat(arPath, id)))
+    if (r) {
+      return extend({ arPath }, r)
+    }
+  }
 }

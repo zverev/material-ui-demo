@@ -4,11 +4,11 @@ import styles from './styles.sass'
 
 export default class CheckboxGroup extends Component {
     render() {
-        const { group: { label, expanded, id, children }, onChange } = this.props
+        const { group: { label, expanded, id, children, visible }, onChange } = this.props
 
         return (
             <div className={styles.checkboxGroup}>
-                <CheckboxItem label={label} onClick={() => onChange(id, !visible, expanded)}/>
+                <CheckboxItem label={label} onChange={() => onChange({ id, visible: !visible, expanded, children })}/>
                 <div className={styles.children}>
                     {children.map((node) => {
                         const { id, expanded, visible, label, author, modified } = node
@@ -23,7 +23,16 @@ export default class CheckboxGroup extends Component {
                             // node
                             return (
                               <div key={id} className={styles.child}>
-                                <CheckboxItem visible={visible} label={label} author={author} modified={modified} />
+                                <CheckboxItem
+                                  id={id}
+                                  visible={visible}
+                                  label={label}
+                                  author={author}
+                                  modified={modified}
+                                  onChange={(v) => {
+                                    onChange(v)
+                                  }}
+                                />
                               </div>
                             )
                         }
