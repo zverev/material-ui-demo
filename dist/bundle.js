@@ -37872,18 +37872,18 @@
 	  }, {
 	    key: 'handleScroll',
 	    value: function handleScroll(event) {
-	      var scrollTop = event.srcElement.scrollTop;
-	      if (scrollTop < scrollThreshold) {
-	        this.setState({
-	          lastScrollPosition: scrollTop,
-	          showHeader: true
-	        });
-	      } else {
-	        this.setState({
-	          lastScrollPosition: scrollTop,
-	          showHeader: false
-	        });
-	      }
+	      // let scrollTop = event.srcElement.scrollTop
+	      // if (scrollTop < scrollThreshold) {
+	      //     this.setState({
+	      //       lastScrollPosition: scrollTop,
+	      //       showHeader: true
+	      //     })
+	      // } else {
+	      //     this.setState({
+	      //       lastScrollPosition: scrollTop,
+	      //       showHeader: false
+	      //     })
+	      // }
 	    }
 	  }, {
 	    key: 'onTabChange',

@@ -33,18 +33,18 @@ export default class SidebarContents extends Component {
   }
 
   handleScroll(event) {
-      let scrollTop = event.srcElement.scrollTop
-      if (scrollTop < scrollThreshold) {
-          this.setState({
-            lastScrollPosition: scrollTop,
-            showHeader: true
-          })
-      } else {
-          this.setState({
-            lastScrollPosition: scrollTop,
-            showHeader: false
-          })
-      }
+      // let scrollTop = event.srcElement.scrollTop
+      // if (scrollTop < scrollThreshold) {
+      //     this.setState({
+      //       lastScrollPosition: scrollTop,
+      //       showHeader: true
+      //     })
+      // } else {
+      //     this.setState({
+      //       lastScrollPosition: scrollTop,
+      //       showHeader: false
+      //     })
+      // }
   }
 
   onTabChange(tabIndex) {
