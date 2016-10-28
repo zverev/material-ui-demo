@@ -59,7 +59,7 @@ export default class SidebarContents extends Component {
           <div className={styles.headerChild + ' ' + styles.headerBar}>
             <SidebarHeaderBar onCloseButtonClick={onCloseButtonClick} />
           </div>
-          <div className={styles.headerChild}>
+          <div className={styles.headerChild + ' ' + styles.datepickerContainer}>
             <DatePickerDemo />
           </div>
           <div className={styles.headerChild}>
