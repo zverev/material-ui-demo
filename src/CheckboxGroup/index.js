@@ -10,7 +10,8 @@ export default class CheckboxGroup extends Component {
             <div className={styles.checkboxGroup}>
                 <CheckboxItem label={label} onChange={() => onChange({ id, visible: !visible, expanded, children })}/>
                 <div className={styles.children}>
-                    {children.map((node) => {
+                    {Object.keys(children).map((k) => {
+                        const node = children[k]
                         const { id, expanded, visible, label, author, modified } = node
                         if (typeof expanded !== 'undefined') {
                             // group

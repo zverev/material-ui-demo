@@ -52764,17 +52764,28 @@
 	                id: '1',
 	                label: 'Проделанные работы',
 	                expanded: true,
-	                children: [{
-	                    id: '11',
-	                    label: 'Накопительно',
-	                    expanded: false,
-	                    children: [{ id: '111', visible: true, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) }, { id: '112', visible: false, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) }, { id: '113', visible: true, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) }]
-	                }, {
-	                    id: '12',
-	                    label: 'Сравнительно',
-	                    expanded: true,
-	                    children: [{ id: '121', visible: false, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) }, { id: '122', visible: true, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) }, { id: '123', visible: false, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) }]
-	                }]
+	                children: {
+	                    '11': {
+	                        id: '11',
+	                        label: 'Накопительно',
+	                        expanded: false,
+	                        children: {
+	                            '111': { id: '111', visible: true, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) },
+	                            '112': { id: '112', visible: false, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) },
+	                            '113': { id: '113', visible: true, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) }
+	                        }
+	                    },
+	                    '12': {
+	                        id: '12',
+	                        label: 'Сравнительно',
+	                        expanded: true,
+	                        children: {
+	                            '121': { id: '121', visible: false, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) },
+	                            '122': { id: '122', visible: true, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) },
+	                            '123': { id: '123', visible: false, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) }
+	                        }
+	                    }
+	                }
 	            });
 	        }
 	    }, {
@@ -52810,8 +52821,10 @@
 	        return null;
 	    }
 	
-	    for (var i = 0; i < tree.children.length; i++) {
-	        var r = find(tree.children[i], id, [].concat(arPath, id, [].concat(arPath, id)));
+	    var keys = Object.keys(tree.children);
+	    for (var i = 0; i < keys.length; i++) {
+	        var key = keys[i];
+	        var r = find(tree.children[key], id, [].concat(arPath, id));
 	        if (r) {
 	            return (0, _lodash.extend)({ arPath: arPath }, r);
 	        }
@@ -53033,7 +53046,8 @@
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: _styles2.default.children },
-	                    children.map(function (node) {
+	                    Object.keys(children).map(function (k) {
+	                        var node = children[k];
 	                        var id = node.id;
 	                        var expanded = node.expanded;
 	                        var visible = node.visible;
