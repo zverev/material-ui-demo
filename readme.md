@@ -26,3 +26,7 @@
 ## Dropdown
 
 - баг https://github.com/react-toolbox/react-toolbox/issues/867
+
+## Баги
+
+- анимация в android
