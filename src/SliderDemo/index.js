@@ -4,19 +4,24 @@ import { Slider } from 'react-toolbox'
 export default class SliderDemo extends Component {
   componentWillMount() {
     this.setState({
-      value: 0
+      value: 12
     })
   }
 
   render() {
+    const { onChange } = this.props
+
     return (
       <Slider
-        min={0}
-        max={10}
+        min={9}
+        max={17}
         step={1}
         snaps={true}
         value={this.state.value}
-        onChange={(value) => { this.setState({ value }) }}
+        onChange={(value) => {
+          this.setState({ value })
+          onChange(value)
+        }}
       />
     )
   }

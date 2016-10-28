@@ -9,7 +9,8 @@ import If from './If.js'
 export default class LayoutTest extends React.Component {
   componentWillMount() {
     this.setState({
-      sidebarPinned: false
+      sidebarPinned: false,
+      zoom: 12
     })
   }
 
@@ -29,12 +30,13 @@ export default class LayoutTest extends React.Component {
             </If>
           </div>
           <div className={styles.mapPane}>
-            <Map />
+            <Map zoom={this.state.zoom} />
           </div>
         </Panel>
         <Sidebar className={styles.sidebar} pinned={this.state.sidebarPinned} width={5}>
           <SidebarContents
             onCloseButtonClick={() => this.toggleSidebar()} sidebarPinned={this.state.sidebarPinned}
+            onSliderChange={(value) => {this.setState({ zoom: value })}}
           />
         </Sidebar>
       </Layout>

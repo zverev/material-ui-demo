@@ -7,8 +7,10 @@ const position = [51.505, -0.09]
 
 export default class extends Component {
   render() {
+    const { zoom } = this.props
+
     return (
-      <Map center={position} zoom={13} className={styles['leaflet-container']}>
+      <Map center={position} zoom={zoom} className={styles['leaflet-container']}>
         <TileLayer
           url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
           attribution='&copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

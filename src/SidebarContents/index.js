@@ -52,7 +52,7 @@ export default class SidebarContents extends Component {
   }
 
   render() {
-    const { onCloseButtonClick, sidebarPinned } = this.props
+    const { onCloseButtonClick, sidebarPinned, onSliderChange } = this.props
 
     return (
       <div className={styles.sidebar}>
@@ -70,7 +70,7 @@ export default class SidebarContents extends Component {
         <If condition={this.state.tabIndex === 0}>
           <div className={styles.content} ref={(r) => { this.contentEl = r }}>
             <SwitchDemo label={'foo'} icon={<PrintIcon />} />
-            <SliderDemo />
+            <SliderDemo onChange={onSliderChange} />
             <RadiosDemo />
             <CheckboxesDemo />
             <RadiosDemo />
