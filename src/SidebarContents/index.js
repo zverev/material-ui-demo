@@ -7,6 +7,7 @@ import DatePickerDemo from '../DatePickerDemo'
 import CheckboxesDemo from '../CheckboxesDemo'
 import RadiosDemo from '../RadiosDemo'
 import SwitchDemo from '../SwitchDemo'
+import SliderDemo from '../SliderDemo'
 import If from '../If.js'
 
 import styles from './styles.sass'
@@ -69,6 +70,7 @@ export default class SidebarContents extends Component {
         <If condition={this.state.tabIndex === 0}>
           <div className={styles.content} ref={(r) => { this.contentEl = r }}>
             <SwitchDemo label={'foo'} icon={<PrintIcon />} />
+            <SliderDemo />
             <RadiosDemo />
             <CheckboxesDemo />
             <RadiosDemo />
