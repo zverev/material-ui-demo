@@ -17,7 +17,7 @@ export default class CheckboxesDemo extends Component {
                     expanded: false,
                     children: [
                         { id: '111', visible: true, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) },
-                        { id: '112', visible: true, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) },
+                        { id: '112', visible: false, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) },
                         { id: '113', visible: true, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) }
                     ]
                 },
@@ -26,9 +26,9 @@ export default class CheckboxesDemo extends Component {
                     label: 'Сравнительно',
                     expanded: true,
                     children: [
-                        { id: '121', visible: true, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) },
+                        { id: '121', visible: false, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) },
                         { id: '122', visible: true, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) },
-                        { id: '123', visible: true, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) }
+                        { id: '123', visible: false, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) }
                     ]
                 }
             ]

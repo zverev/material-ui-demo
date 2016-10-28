@@ -52642,12 +52642,12 @@
 	                    id: '11',
 	                    label: 'Накопительно',
 	                    expanded: false,
-	                    children: [{ id: '111', visible: true, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) }, { id: '112', visible: true, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) }, { id: '113', visible: true, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) }]
+	                    children: [{ id: '111', visible: true, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) }, { id: '112', visible: false, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) }, { id: '113', visible: true, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) }]
 	                }, {
 	                    id: '12',
 	                    label: 'Сравнительно',
 	                    expanded: true,
-	                    children: [{ id: '121', visible: true, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) }, { id: '122', visible: true, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) }, { id: '123', visible: true, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) }]
+	                    children: [{ id: '121', visible: false, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) }, { id: '122', visible: true, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) }, { id: '123', visible: false, label: 'Участок 1', author: 'Burtseva Nelly', modified: new Date(2015, 11, 5) }]
 	                }]
 	            });
 	        }
@@ -52714,7 +52714,7 @@
 	        key: 'render',
 	        value: function render() {
 	            var _props = this.props;
-	            var checked = _props.checked;
+	            var visible = _props.visible;
 	            var label = _props.label;
 	            var modified = _props.modified;
 	            var author = _props.author;
@@ -52729,8 +52729,8 @@
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: _styles2.default.checkboxArea },
-	                    _react2.default.createElement(_reactToolbox.Checkbox, { checked: checked, onChange: function onChange(value) {
-	                            _onChange && _onChange(!checked);
+	                    _react2.default.createElement(_reactToolbox.Checkbox, { checked: visible, onChange: function onChange(value) {
+	                            _onChange && _onChange(!visible);
 	                        } })
 	                ),
 	                _react2.default.createElement(
@@ -52744,7 +52744,7 @@
 	                    _react2.default.createElement(
 	                        'span',
 	                        { className: _styles2.default.label, onClick: function onClick(value) {
-	                                _onChange && _onChange(!checked);
+	                                _onChange && _onChange(!visible);
 	                            } },
 	                        label
 	                    ),
@@ -52896,7 +52896,7 @@
 	                            return _react2.default.createElement(
 	                                'div',
 	                                { key: id, className: _styles2.default.child },
-	                                _react2.default.createElement(_CheckboxItem2.default, { label: label, author: author, modified: modified })
+	                                _react2.default.createElement(_CheckboxItem2.default, { visible: visible, label: label, author: author, modified: modified })
 	                            );
 	                        }
 	                        return _react2.default.createElement('div', null);
