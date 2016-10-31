@@ -30,7 +30,7 @@ export default class LayoutTest extends React.Component {
             </If>
           </div>
           <div className={styles.mapPane}>
-            <Map zoom={this.state.zoom} />
+            {/* <Map zoom={this.state.zoom} /> */}
           </div>
         </Panel>
         <Sidebar className={styles.sidebar} pinned={this.state.sidebarPinned} width={5}>
