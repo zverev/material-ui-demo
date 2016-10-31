@@ -15,7 +15,7 @@ export default class SwitchDemo extends Component {
 
     return (
       <div className={styles.switchDemo}>
-        <div class={styles.icon}>{icon}</div>
+        <div className={styles.icon}>{icon}</div>
         <span className={styles.label}>{label}</span>
         <Switch
           className={styles.switch}
