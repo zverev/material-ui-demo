@@ -25,11 +25,11 @@ export default class SidebarContents extends Component {
   }
 
   componentDidMount() {
-    this.contentEl.addEventListener('scroll', (e) => this.handleScroll(e))
+    // this.contentEl.addEventListener('scroll', (e) => this.handleScroll(e))
   }
 
   componentWillUnmount() {
-    this.contentEl.removeEventListener('scroll', (e) => this.handleScroll(e))
+    // this.contentEl.removeEventListener('scroll', (e) => this.handleScroll(e))
   }
 
   handleScroll(event) {
@@ -61,22 +61,25 @@ export default class SidebarContents extends Component {
             <SidebarHeaderBar onCloseButtonClick={onCloseButtonClick} />
           </div>
           <div className={styles.headerChild + ' ' + styles.datepickerContainer}>
-            <DatePickerDemo />
+            {/* <DatePickerDemo /> */}
           </div>
           <div className={styles.headerChild}>
-            <TabsDemo index={this.state.tabIndex} onChange={(tabIndex) => this.onTabChange(tabIndex)} />
+            {/* <TabsDemo index={this.state.tabIndex} onChange={(tabIndex) => this.onTabChange(tabIndex)} /> */}
           </div>
         </div>
-        <If condition={this.state.tabIndex === 0}>
-          <div className={styles.content} ref={(r) => { this.contentEl = r }}>
+        {/* <If condition={this.state.tabIndex === 0}> */}
+          {/* <div className={styles.content} ref={(r) => { this.contentEl = r }}> */}
+          <div className={styles.content}>
             <SwitchDemo label={'foo'} icon={<PrintIcon />} />
             <SliderDemo onChange={onSliderChange} />
             <RadiosDemo />
             <CheckboxesDemo />
             <RadiosDemo />
             <CheckboxesDemo />
+            {/* <RadiosDemo /> */}
+            {/* <CheckboxesDemo /> */}
           </div>
-        </If>
+        {/* </If> */}
       </div>
     )
   }
