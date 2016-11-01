@@ -29,5 +29,8 @@ module.exports = {
         extractCSS
     ],
 
+    resolve: { fallback: path.join(__dirname, "node_modules") },
+    resolveLoader: { fallback: path.join(__dirname, "node_modules") },
+
     devtool: 'source-map'
 }
