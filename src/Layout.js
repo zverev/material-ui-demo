@@ -2,6 +2,7 @@ import { Button, Layout, Panel, Sidebar } from 'react-toolbox'
 import React, { Component } from 'react'
 import { MenuIcon } from './icons.js'
 import SidebarContents from './SidebarContents'
+import FlexboxDemo from './FlexboxDemo'
 import styles from './styles.sass'
 import Map from './Map.js'
 import If from './If.js'
@@ -31,6 +32,7 @@ export default class LayoutTest extends React.Component {
           </div>
           <div className={styles.mapPane}>
             {/* <Map zoom={this.state.zoom} /> */}
+            <FlexboxDemo />
           </div>
         </Panel>
         <Sidebar className={styles.sidebar} pinned={this.state.sidebarPinned} width={5}>
