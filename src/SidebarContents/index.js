@@ -4,7 +4,9 @@ import { CloseIcon, PrintIcon, CalculateIcon } from '../icons.js'
 import TabsDemo from '../TabsDemo'
 import SidebarHeaderBar from '../SidebarHeaderBar'
 import DatePickerDemo from '../DatePickerDemo'
-import CheckboxesDemo from '../CheckboxesDemo'
+// import CheckboxesDemo from '../CheckboxesDemo'
+import Chance from 'chance'
+import CheckboxDemo from '../CheckboxDemo'
 import RadiosDemo from '../RadiosDemo'
 import SwitchDemo from '../SwitchDemo'
 import SliderDemo from '../SliderDemo'
@@ -13,6 +15,7 @@ import If from '../If.js'
 import styles from './styles.sass'
 
 const scrollThreshold = 30
+const chance = new Chance()
 
 export default class SidebarContents extends Component {
   componentWillMount() {
@@ -70,12 +73,15 @@ export default class SidebarContents extends Component {
         {/* <If condition={this.state.tabIndex === 0}> */}
           {/* <div className={styles.content} ref={(r) => { this.contentEl = r }}> */}
           <div className={styles.content}>
-            <SwitchDemo label={'foo'} icon={<PrintIcon />} />
+            <SwitchDemo label={randomSentence()} icon={<PrintIcon />} />
             <SliderDemo onChange={onSliderChange} />
-            <RadiosDemo />
-            <CheckboxesDemo />
-            <RadiosDemo />
-            <CheckboxesDemo />
+            <CheckboxDemo label={randomSentence()} checked={true} />
+            <CheckboxDemo label={randomSentence()} checked={false} />
+            <CheckboxDemo label={randomSentence()} checked={true} />
+            {/* <RadiosDemo /> */}
+            {/* <CheckboxesDemo /> */}
+            {/* <RadiosDemo /> */}
+            {/* <CheckboxesDemo /> */}
             {/* <RadiosDemo /> */}
             {/* <CheckboxesDemo /> */}
           </div>
@@ -83,4 +89,8 @@ export default class SidebarContents extends Component {
       </div>
     )
   }
+}
+
+function randomSentence() {
+  return chance.sentence({ words: chance.integer({ min: 1, max: 5 }) })
 }
