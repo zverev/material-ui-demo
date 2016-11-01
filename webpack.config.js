@@ -13,7 +13,7 @@ module.exports = {
 
     module: {
         loaders: [
-            { test: /\.js$/, loader: 'babel', query: { presets: ['stage-3', 'es2015', 'react'] }, exclude: /node_modules/ },
+            { test: /\.js$/, loader: 'babel', query: { presets: ['es2015', 'react', 'stage-0'] }, exclude: /(node_modules|react-css-themr)/ },
             { test: /\.css$/, loader: extractCSS.extract(['css']) },
             { test: /\.(scss|sass)$/, loader: extractCSS.extract(['css?modules&sourceMap', 'sass?sourceMap']) },
             { test: /\.html$/, loader: 'raw' },
