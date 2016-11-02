@@ -20,11 +20,9 @@ export default createClass({
         <div className={styles.componentTitle}>RadioButtons:</div>
         <RadiosDemo />
         <div className={styles.componentTitle}>DatePicker:</div>
-        {/* <DatePickerDemo /> */}
-        <div className={styles.componentDisabled}>disabled</div>
+        {tryCreateComponent(DatePickerDemo)}
         <div className={styles.componentTitle}>TimePicker:</div>
-        {/* <TimePickerDemo /> */}
-        <div className={styles.componentDisabled}>disabled</div>
+        {tryCreateComponent(TimePickerDemo)}
         <div className={styles.componentTitle}>Slider:</div>
         <SliderDemo />
       </div>
@@ -34,4 +32,14 @@ export default createClass({
 
 function randomSentence() {
   return chance.sentence({ words: chance.integer({ min: 1, max: 5 }) })
+}
+
+function tryCreateComponent(componentClass) {
+  let component
+  try {
+    component = React.createElement(componentClass, {})
+  } catch(e) {
+    component = React.createElement('div', {}, e.message)
+  }
+  return component
 }
