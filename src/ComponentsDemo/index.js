@@ -1,5 +1,6 @@
 import React, { createClass } from 'react'
 import DatePickerDemo from '../DatePickerDemo'
+import TimePickerDemo from '../TimePickerDemo'
 import CheckboxDemo from '../CheckboxDemo'
 import RadiosDemo from '../RadiosDemo'
 import SliderDemo from '../SliderDemo'
@@ -20,6 +21,8 @@ export default createClass({
         <RadiosDemo />
         <div className={styles.componentTitle}>DatePicker:</div>
         <DatePickerDemo />
+        <div className={styles.componentTitle}>TimePicker:</div>
+        <TimePickerDemo />
         <div className={styles.componentTitle}>Slider:</div>
         <SliderDemo />
       </div>
