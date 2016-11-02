@@ -20,9 +20,11 @@ export default createClass({
         <div className={styles.componentTitle}>RadioButtons:</div>
         <RadiosDemo />
         <div className={styles.componentTitle}>DatePicker:</div>
-        <DatePickerDemo />
+        {/* <DatePickerDemo /> */}
+        <div className={styles.componentDisabled}>disabled</div>
         <div className={styles.componentTitle}>TimePicker:</div>
-        <TimePickerDemo />
+        {/* <TimePickerDemo /> */}
+        <div className={styles.componentDisabled}>disabled</div>
         <div className={styles.componentTitle}>Slider:</div>
         <SliderDemo />
       </div>
