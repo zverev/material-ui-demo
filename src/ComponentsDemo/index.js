@@ -1,4 +1,6 @@
 import React, { createClass } from 'react'
+import { CalculateIcon, DownloadIcon, LayersIcon, PrintIcon, VolumeIcon, ScanIcon } from '../icons.js'
+import { Tab, Tabs } from 'react-toolbox'
 import DatePickerDemo from '../DatePickerDemo'
 import TimePickerDemo from '../TimePickerDemo'
 import CheckboxDemo from '../CheckboxDemo'
@@ -8,23 +10,34 @@ import TabsDemo from '../TabsDemo'
 import styles from './styles.sass'
 import Chance from 'chance'
 
-
 const chance = new Chance()
 
 export default createClass({
+  componentWillMount() {
+    this.setState({
+      tabIndex: 0
+    })
+  },
+
   render() {
     return (
       <div className={styles.componentsDemo}>
-        <div className={styles.componentTitle}>Checkboxes:</div>
-        <CheckboxDemo label={randomSentence()} checked={true} />
-        <div className={styles.componentTitle}>RadioButtons:</div>
-        <RadiosDemo />
-        <div className={styles.componentTitle}>DatePicker:</div>
-        {tryCreateComponent(DatePickerDemo)}
-        <div className={styles.componentTitle}>TimePicker:</div>
-        {tryCreateComponent(TimePickerDemo)}
-        <div className={styles.componentTitle}>Slider:</div>
-        <SliderDemo />
+        <Tabs index={this.state.tabIndex} fixed onChange={(tabIndex) => this.setState({ tabIndex })}>
+          <Tab label={<PrintIcon/>}>
+            <div className={styles.componentTitle}>Checkboxes:</div>
+            <CheckboxDemo label={randomSentence()} checked={true} />
+            <div className={styles.componentTitle}>RadioButtons:</div>
+            <RadiosDemo />
+            <div className={styles.componentTitle}>Slider:</div>
+            <SliderDemo />
+          </Tab>
+          <Tab label={<LayersIcon/>}>
+            <div className={styles.componentTitle}>DatePicker:</div>
+            {tryCreateComponent(DatePickerDemo)}
+            <div className={styles.componentTitle}>TimePicker:</div>
+            {tryCreateComponent(TimePickerDemo)}
+          </Tab>
+        </Tabs>
       </div>
     )
   }
