@@ -32,7 +32,9 @@ export default class LayoutTest extends React.Component {
             </If>
           </div>
           <div className={styles.mapPane}>
-            <ComponentsDemo />
+            <div className={styles.componentsDemo}>
+              <ComponentsDemo />
+            </div>
           </div>
         </Panel>
         <Sidebar className={styles.sidebar} pinned={this.state.sidebarPinned} width={5}>
