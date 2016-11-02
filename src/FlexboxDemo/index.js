@@ -29,6 +29,14 @@ export default createClass({
           label={'row; flex-end'}
           className={classNames(styles.directionRow, styles.justifyFlexEnd)}
         />
+        <FlexPane
+          label={'column; center; space-between'}
+          className={classNames(styles.directionColumn, styles.alignCenter, styles.justifySpaceBetween)}
+        />
+        <FlexPane
+          label={'column; center; space-around'}
+          className={classNames(styles.directionColumn, styles.alignCenter, styles.justifySpaceAround)}
+        />
       </div>
     )
   }
@@ -37,7 +45,7 @@ export default createClass({
 function FlexPane({ className, label }) {
   return (
     <div className={styles['flexPaneWrapper']}>
-      <span>{label}</span>
+      <div className={styles['label']}>{label}</div>
       <div className={classNames(styles['flexPane'], className)}>
         {[0,1,2,3,4].map((n, i) => (
           <div className={styles['flexItem']} key={i}>{n}</div>
