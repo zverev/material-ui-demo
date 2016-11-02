@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { createClass } from 'react'
 import { DatePicker } from 'react-toolbox'
 import moment from 'moment'
 
@@ -10,13 +10,13 @@ const localeRu = {
   weekdaysLetter: 'пн_вт_ср_чт_пт_сб_вс'.split('_')
 }
 
-export default class DatePickerDemo extends Component {
+export default createClass({
   componentWillMount() {
     moment.locale('ru')
     this.setState({
       date: new Date()
     })
-  }
+  },
 
   render() {
     return (
@@ -28,4 +28,4 @@ export default class DatePickerDemo extends Component {
       />
     )
   }
-}
+})

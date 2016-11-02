@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createClass } from 'react'
 import { render } from 'react-dom'
 import Layout from './Layout.js'
 import styles from './styles.sass'

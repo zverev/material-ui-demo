@@ -20,7 +20,7 @@ export default class SliderDemo extends Component {
         value={this.state.value}
         onChange={(value) => {
           this.setState({ value })
-          onChange(value)
+          onChange && onChange(value)
         }}
       />
     )
