@@ -3,6 +3,8 @@ import { CalculateIcon, DownloadIcon, LayersIcon, PrintIcon, VolumeIcon, ScanIco
 import { Tab, Tabs } from 'react-toolbox'
 import DatePickerDemo from '../DatePickerDemo'
 import TimePickerDemo from '../TimePickerDemo'
+import DropdownsDemo2 from '../DropdownsDemo2'
+import DropdownsDemo from '../DropdownsDemo'
 import CheckboxDemo from '../CheckboxDemo'
 import DialogDemo from '../DialogDemo'
 import RadiosDemo from '../RadiosDemo'
@@ -39,6 +41,9 @@ export default createClass({
             {tryCreateComponent(TimePickerDemo)}
             <div className={styles.componentTitle}>Dialog:</div>
             {tryCreateComponent(DialogDemo)}
+            <div className={styles.componentTitle}>Dropdowns:</div>
+            <DropdownsDemo2 />
+            <DropdownsDemo />
           </Tab>
         </Tabs>
       </div>
