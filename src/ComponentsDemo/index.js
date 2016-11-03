@@ -4,6 +4,7 @@ import { Tab, Tabs } from 'react-toolbox'
 import DatePickerDemo from '../DatePickerDemo'
 import TimePickerDemo from '../TimePickerDemo'
 import CheckboxDemo from '../CheckboxDemo'
+import DialogDemo from '../DialogDemo'
 import RadiosDemo from '../RadiosDemo'
 import SliderDemo from '../SliderDemo'
 import TabsDemo from '../TabsDemo'
@@ -36,6 +37,8 @@ export default createClass({
             {tryCreateComponent(DatePickerDemo)}
             <div className={styles.componentTitle}>TimePicker:</div>
             {tryCreateComponent(TimePickerDemo)}
+            <div className={styles.componentTitle}>Dialog:</div>
+            {tryCreateComponent(DialogDemo)}
           </Tab>
         </Tabs>
       </div>
